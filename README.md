@@ -1,4 +1,4 @@
-# Ansible role '<role>'
+# Ansible role 'common'
 
 An Ansible role for setting up some common utilities:
 - sudo
