@@ -19,9 +19,8 @@ Minimum requirements:
 - Ubuntu 16.10
 
 ## Role Variables
-| Variable                       | Default                          | Comments (type)  
-                                              |
-| :---                           | :---                             | :---                                                                                                             |
+| Variable                       | Default                          | Comments (type)  |
+| :---                           | :---                             | :---             |
 | sudo_wheel_all                 | pass | Allows members of group wheel to execute any command (pass/nopass/off) |
 
 ## Dependencies
