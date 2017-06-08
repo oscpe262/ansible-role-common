@@ -1,0 +1,20 @@
+## roles/common/vars/RedHat.yml
+# RHEL variables associated with this role.
+# vim:ft=ansible:
+---
+sound:
+  alsa-utils: present
+  alsa-plugins-pulseaudio: present
+  pulseaudio: present
+#  pulseaudio-: present
+Filesystems:
+  fuse: present
+#  mtpfs: present
+  nfs-utils: present
+Glances:
+  glances: present
+Utils:
+  htop: present
+  bind-utils: present
+  libselinux-python: present
+...

@@ -1,0 +1,17 @@
+## roles/common/handlers/main.yml
+# Handlers for the role
+# vim:ft=ansible:
+---
+- name: "install sudo"
+  package: name='sudo' state='present'
+
+# TODO: Implement enables accurately according to dists.
+- name: nfs enable
+  service: name={{ item }} state=started enabled=yes
+  with_items:
+    - rpcbind
+    #- nfs-client
+    #- remote-fs
+  ignore_errors: yes
+...
+

@@ -1,0 +1,19 @@
+## roles/common/vars/Archlinux.yml
+# Arch Linux variables associated with this role.
+# vim:ft=ansible:
+---
+sound:
+  alsa-utils: present
+  alsa-plugins: present
+  pulseaudio: present
+  pulseaudio-alsa: present
+Filesystems:
+  fuse: present
+  mtpfs: present
+  nfs-utils: present
+Glances:
+  glances: present
+Utils:
+  htop: present
+  dnsutils: present
+...

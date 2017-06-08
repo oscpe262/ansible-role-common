@@ -1,0 +1,61 @@
+## roles/common/tasks/main.yml
+## Role main file
+# vim:ft=ansible:
+---
+## Initialise distribution-specific variables
+- include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+  tags: sound,utils,glances
+
+- name: "Utilities"
+  package:
+    name: '{{ item.key }}'
+    state: '{{ item.value }}'
+  tags: utils
+  with_dict: '{{ Utils }}'
+
+- name: "Sudo"
+  template:
+    src: sudoers.j2
+    dest: /etc/sudoers
+    owner: root
+    group: root
+    mode: 0440
+  tags: sudo
+  notify:
+    - install sudo
+
+- name: "Sound"
+  package:
+    name: '{{ item.key }}'
+    state: '{{ item.value }}'
+  with_dict: '{{ sound }}'
+  tags: sound
+
+# TODO: see handlers/main.yml
+#- include: Archlinux.yml
+#  when: "'Archlinux' in ansible_distribution"
+#  tags: 
+
+#- include: CentOS.yml
+#  when: "'CentOS' in ansible_distribution"
+#  tags: 
+
+#- name: "Filesystems"
+#  package:
+#    name: '{{ item.key }}'
+#    state: '{{ item.value }}'
+#  with_dict: '{{ Filesystems }}'
+#  notify:
+#  - nfs enable
+
+- name: "Glances"
+  package:
+    name: '{{ item.key }}'
+    state: '{{ item.value }}'
+  tags: glances
+  with_dict: '{{ Glances }}'
+
+...

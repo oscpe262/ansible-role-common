@@ -1,0 +1,8 @@
+## roles/common/defaults/main.yml
+# Default lower priority variables for the role
+# vim:ft=ansible:
+---
+# Allows members of group wheel to execute any command (pass|nopass|off).
+sudo_wheel_all: pass
+...
+

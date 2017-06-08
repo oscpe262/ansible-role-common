@@ -1,0 +1,20 @@
+## roles/common/vars/Ubuntu.yml
+# Ubuntu variables associated with this role.
+# vim:ft=ansible:
+---
+sound:
+  alsa-tools: present
+  alsa-utils: present
+  pulseaudio: present
+  pulseaudio-utils: present
+Filesystems:
+  fuse: present
+  mtpfs: present
+  nfs-client: present
+Glances:
+  glances: present
+Utils:
+  aptitude: present
+  htop: present
+  dnsutils: present
+...
