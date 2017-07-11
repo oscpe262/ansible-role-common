@@ -15,5 +15,6 @@ Glances:
   glances: present
 Utils:
   htop: present
-  dnsutils: present
+  bind-tools: present
+
 ...
