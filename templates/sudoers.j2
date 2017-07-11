@@ -83,14 +83,14 @@ root ALL=(ALL) ALL
 ## Uncomment to allow members of group wheel to execute any command
 {% if 'pass' in sudo_wheel_all %}
 %wheel ALL=(ALL) ALL
-{% elif %}
+{% else %}
 #%wheel ALL=(ALL) ALL
 {% endif %}
 
 ## Same thing without a password
 {% if 'nopass' in sudo_wheel_all %}
 %wheel ALL=(ALL) NOPASSWD: ALL
-{% elif %}
+{% else %}
 #%wheel ALL=(ALL) NOPASSWD: ALL
 {% endif %}
 
