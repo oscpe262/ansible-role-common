@@ -35,11 +35,11 @@
   tags: sound
 
 # TODO: see handlers/main.yml
-#- include: Archlinux.yml
+#- include_tasks: Archlinux.yml
 #  when: "'Archlinux' in ansible_distribution"
 #  tags: 
 
-#- include: CentOS.yml
+#- include_tasks: CentOS.yml
 #  when: "'CentOS' in ansible_distribution"
 #  tags: 
 
