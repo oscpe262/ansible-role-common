@@ -1,0 +1,30 @@
+set -g default-terminal "tmux-256color"
+
+# Vim style
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xsel -i -p && xsel -o -p | xsel -i -b"
+bind-key p run "xsel -o | tmux load-buffer - ; tmux paste-buffer
+
+#urxvt tab like window switching (-n: no prior escape seq)
+bind -n S-down new-window
+bind -n S-left prev
+bind -n S-right next
+bind -n C-left swap-window -t -1
+bind -n C-right swap-window -t +1"
+
+# tmux titles
+set -g set-titles on
+set -g set-titles-string "#T"
+
+# Vim style copy
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection
+bind-key -T copy-mode-vi 'Space' send -X halfpage-down
+bind-key -T copy-mode-vi 'Bspace' send -X halfpage-up
+
+# Mouse scroll
+set -g mouse on
+bind -T root WheelUpPane   if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; copy-mode -e; send-keys -M"
+bind -T root WheelDownPane if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; send-keys -M"
+
+run-shell "powerline-daemon -q"
+source "{{ pline_path }}/site-packages/powerline/bindings/tmux/powerline.conf"

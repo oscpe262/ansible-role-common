@@ -58,4 +58,19 @@
   tags: glances
   with_dict: '{{ Glances }}'
 
+- name: "tmux packages"
+  package:
+    name: '{{ item }}'
+    state: present
+  tags: tmux
+  with_items:
+    - tmux
+    - xsel
+
+- name: "tmux conf"
+  template:
+    src: tmux.conf.j2
+    dest: /etc/tmux.conf
+    mode: 0664
+  tags: tmux
 ...
