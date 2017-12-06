@@ -4,6 +4,6 @@
 ---
 # Allows members of group wheel to execute any command (pass|nopass|off).
 sudo_wheel_all: pass
-pline_path: /sr/lib/python3.6
+pline_path: /usr/lib/python3.6
 ...
 

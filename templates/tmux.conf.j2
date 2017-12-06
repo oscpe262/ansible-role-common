@@ -8,12 +8,13 @@ bind-key p run "xsel -o | tmux load-buffer - ; tmux paste-buffer
 bind -n S-down new-window
 bind -n S-left prev
 bind -n S-right next
-bind -n C-left swap-window -t -1
-bind -n C-right swap-window -t +1"
 
 # tmux titles
 set -g set-titles on
 set -g set-titles-string "#T"
+
+# tmux sync panes
+bind v set-window-option synchronize-panes
 
 # Vim style copy
 bind-key -T copy-mode-vi 'v' send -X begin-selection
