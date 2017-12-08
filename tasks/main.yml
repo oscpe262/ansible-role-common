@@ -66,6 +66,7 @@
   with_items:
     - tmux
     - xsel
+    - xclip
 
 - name: "tmux conf"
   template:
