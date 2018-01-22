@@ -18,4 +18,5 @@ Utils:
   bind-utils: present
   libselinux-python: present
   util-linux-user: present
+  cockpit: present
 ...

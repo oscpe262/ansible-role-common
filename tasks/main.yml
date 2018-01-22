@@ -51,10 +51,11 @@
 #  notify:
 #  - nfs enable
 
+## Legacy, look at Cockpit instead
 - name: "Glances"
   package:
     name: '{{ item.key }}'
-    state: '{{ item.value }}'
+    state: absent
   tags: glances
   with_dict: '{{ Glances }}'
 

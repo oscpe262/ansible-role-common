@@ -28,4 +28,8 @@ bind -T root WheelUpPane   if-shell -F -t = "#{alternate_on}" "send-keys -M" "se
 bind -T root WheelDownPane if-shell -F -t = "#{alternate_on}" "send-keys -M" "select-pane -t =; send-keys -M"
 
 run-shell "powerline-daemon -q"
+{% if 'RedHat' in ansible_os_family %}
+source /usr/share/tmux/powerline.conf
+{% else %}
 source "{{ pline_path }}/site-packages/powerline/bindings/tmux/powerline.conf"
+{% endif %}
